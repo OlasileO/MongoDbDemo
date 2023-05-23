@@ -7,8 +7,11 @@ namespace DataAccess.Model
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string? ProductName { get; set; }
-        public int CategoryId { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? CategoryId { get; set; }
+        [BsonIgnoreIfNull]
+        public string? CategoryName { get; set; }
     }
 }
